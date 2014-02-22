@@ -19,6 +19,8 @@
 		4916C92118B9483F008D6E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4916C90918B9483F008D6E3E /* UIKit.framework */; };
 		4916C92918B9483F008D6E3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4916C92718B9483F008D6E3E /* InfoPlist.strings */; };
 		4916C92B18B9483F008D6E3E /* TestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4916C92A18B9483F008D6E3E /* TestAppTests.m */; };
+		4916C93A18B94E0C008D6E3E /* PopularMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4916C93818B94E0C008D6E3E /* PopularMediaViewController.m */; };
+		4916C93B18B94E0C008D6E3E /* PopularMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		4916C92618B9483F008D6E3E /* TestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestAppTests-Info.plist"; sourceTree = "<group>"; };
 		4916C92818B9483F008D6E3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4916C92A18B9483F008D6E3E /* TestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAppTests.m; sourceTree = "<group>"; };
+		4916C93718B94E0C008D6E3E /* PopularMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopularMediaViewController.h; path = ../PopularMediaViewController.h; sourceTree = "<group>"; };
+		4916C93818B94E0C008D6E3E /* PopularMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopularMediaViewController.m; path = ../PopularMediaViewController.m; sourceTree = "<group>"; };
+		4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopularMediaViewController.xib; path = ../PopularMediaViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 			children = (
 				4916C91418B9483F008D6E3E /* AppDelegate.h */,
 				4916C91518B9483F008D6E3E /* AppDelegate.m */,
+				4916C93718B94E0C008D6E3E /* PopularMediaViewController.h */,
+				4916C93818B94E0C008D6E3E /* PopularMediaViewController.m */,
+				4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */,
 				4916C91718B9483F008D6E3E /* Images.xcassets */,
 				4916C90C18B9483F008D6E3E /* Supporting Files */,
 			);
@@ -219,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4916C93B18B94E0C008D6E3E /* PopularMediaViewController.xib in Resources */,
 				4916C91018B9483F008D6E3E /* InfoPlist.strings in Resources */,
 				4916C91818B9483F008D6E3E /* Images.xcassets in Resources */,
 			);
@@ -241,6 +250,7 @@
 			files = (
 				4916C91618B9483F008D6E3E /* AppDelegate.m in Sources */,
 				4916C91218B9483F008D6E3E /* main.m in Sources */,
+				4916C93A18B94E0C008D6E3E /* PopularMediaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

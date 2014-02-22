@@ -7,14 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "PopularMediaViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
+    PopularMediaViewController *viewController = [[PopularMediaViewController alloc] initWithNibName:@"PopularMediaViewController" bundle:nil];
+    
+    // Create a UINavController so we have forward/back navigation capability
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
+    [self.window setRootViewController:navController];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
