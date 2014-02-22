@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PopularMediaViewController.h"
+#import "MediaController.h"
 
 @implementation AppDelegate
 
