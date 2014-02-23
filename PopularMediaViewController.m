@@ -8,6 +8,8 @@
 
 #import "PopularMediaViewController.h"
 #import "MediaController.h"
+#import "MediaObject.h"
+#import "ImageViewController.h"
 
 @interface PopularMediaViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -38,22 +40,34 @@
     
     self.mediaController = [[MediaController alloc] init];
     [self updateContent];
+    
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(tapRefresh:)];
+    
+    self.navigationItem.rightBarButtonItem = refreshButton;
 }
 
 - (void)updateContent
 {
-    [self.mediaController fetchPopularMediaWithCompletionBlock:^(BOOL success) {
+    // for memory management
+    __weak PopularMediaViewController *weakSelf = self;
+    
+    [weakSelf.mediaController fetchPopularMediaWithCompletionBlock:^(BOOL success) {
         
-        if (success)
-        {
-            // Reload the tableview
-            NSLog(@"success!");
-        }
-        else
-        {
-            // Alert the user on failure
-            NSLog(@"failure");
-        }
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            if (success)
+            {
+                // Reload the tableview
+                [self.tableView reloadData];
+            }
+            else
+            {
+                // Alert the user on failure
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Uh Oh!" message:@"An error occurred" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            
+                [alert show];
+            }
+        });
     }];
 }
 
@@ -68,9 +82,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *viewController = [[UIViewController alloc] init];
+    ImageViewController *viewController = [[ImageViewController alloc] initWithNibName:@"ImageViewController" bundle:Nil];
     
-    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.mediaObject = [self.mediaController.mediaObjects objectAtIndex:indexPath.row];
+    
+    viewController.view.backgroundColor = [UIColor blueColor];
     
     [self.navigationController pushViewController:viewController animated:YES];
 }
@@ -87,9 +103,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
+    MediaObject *currMediaObject = [self.mediaController.mediaObjects objectAtIndex:indexPath.row];
+    
     cell.textLabel.textColor = [UIColor grayColor];
     cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.text = @"I am a row.";
+    cell.textLabel.text = currMediaObject.username;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
     
@@ -97,7 +116,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return [self.mediaController.mediaObjects count];
+}
+
+- (void)tapRefresh:(UIBarButtonItem *)sender
+{
+    [self updateContent];
 }
 
 @end

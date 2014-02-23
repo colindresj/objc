@@ -45,6 +45,7 @@
             
             if (!jsonError) {
                 self.mediaObjects = [self mediaObjectsFromResponse:hash];
+                NSLog(@"%@", self.mediaObjects);
                 completionBlock(YES);
             } else {
                 completionBlock(NO);
@@ -63,7 +64,7 @@
 - (NSArray *)mediaObjectsFromResponse:(NSDictionary *)response
 {
     // Initialize an empty NSMutableArray to hold the MediaObjects you create
-    NSMutableArray * mediaObjects = [NSMutableArray array];
+    NSMutableArray * mediaObjects = [[NSMutableArray alloc] init];
     
     // Extract the array value that is keyed to the key "data" in the response dictionary
     NSArray *popularData = [response valueForKey:@"data"];

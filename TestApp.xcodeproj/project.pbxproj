@@ -23,6 +23,8 @@
 		4916C93B18B94E0C008D6E3E /* PopularMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */; };
 		4916C93E18B95D3D008D6E3E /* MediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4916C93D18B95D3D008D6E3E /* MediaController.m */; };
 		49D65C0218BA758300C3AF4C /* MediaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D65C0118BA758300C3AF4C /* MediaObject.m */; };
+		49D65C0618BA965100C3AF4C /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D65C0418BA965100C3AF4C /* ImageViewController.m */; };
+		49D65C0718BA965100C3AF4C /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D65C0518BA965100C3AF4C /* ImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		4916C93D18B95D3D008D6E3E /* MediaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaController.m; sourceTree = "<group>"; };
 		49D65C0018BA758300C3AF4C /* MediaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaObject.h; sourceTree = "<group>"; };
 		49D65C0118BA758300C3AF4C /* MediaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaObject.m; sourceTree = "<group>"; };
+		49D65C0318BA965100C3AF4C /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
+		49D65C0418BA965100C3AF4C /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
+		49D65C0518BA965100C3AF4C /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageViewController.xib; path = ../ImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,9 @@
 				4916C93D18B95D3D008D6E3E /* MediaController.m */,
 				49D65C0018BA758300C3AF4C /* MediaObject.h */,
 				49D65C0118BA758300C3AF4C /* MediaObject.m */,
+				49D65C0318BA965100C3AF4C /* ImageViewController.h */,
+				49D65C0418BA965100C3AF4C /* ImageViewController.m */,
+				49D65C0518BA965100C3AF4C /* ImageViewController.xib */,
 				4916C91718B9483F008D6E3E /* Images.xcassets */,
 				4916C90C18B9483F008D6E3E /* Supporting Files */,
 			);
@@ -239,6 +247,7 @@
 			files = (
 				4916C93B18B94E0C008D6E3E /* PopularMediaViewController.xib in Resources */,
 				4916C91018B9483F008D6E3E /* InfoPlist.strings in Resources */,
+				49D65C0718BA965100C3AF4C /* ImageViewController.xib in Resources */,
 				4916C91818B9483F008D6E3E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D65C0618BA965100C3AF4C /* ImageViewController.m in Sources */,
 				4916C93E18B95D3D008D6E3E /* MediaController.m in Sources */,
 				4916C91618B9483F008D6E3E /* AppDelegate.m in Sources */,
 				4916C91218B9483F008D6E3E /* main.m in Sources */,
