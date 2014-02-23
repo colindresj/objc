@@ -7,10 +7,13 @@
 //
 
 #import "PopularMediaViewController.h"
+#import "MediaController.h"
 
 @interface PopularMediaViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) MediaController *mediaController;
 
 @end
 
@@ -32,6 +35,24 @@
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"WUDUP";
+    
+    self.mediaController = [[MediaController alloc] init];
+    [self updateContent];
+}
+
+- (void)updateContent
+{
+    [self.mediaController fetchPopularMediaWithCompletionBlock:^(BOOL success) {
+        
+        if (success)
+        {
+            NSLog(@"success!");
+        }
+        else
+        {
+            NSLog(@"failure");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
