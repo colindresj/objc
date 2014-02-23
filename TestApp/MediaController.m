@@ -45,7 +45,6 @@
             
             if (!jsonError) {
                 self.mediaObjects = [self mediaObjectsFromResponse:hash];
-                NSLog(@"%@", self.mediaObjects);
                 completionBlock(YES);
             } else {
                 completionBlock(NO);

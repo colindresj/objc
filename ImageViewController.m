@@ -47,7 +47,22 @@
 
 -(void)setupImageView
 {
-    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDownloadTask *downloadImageTask = [session downloadTaskWithURL:self.mediaObject.imgURL completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        
+        NSHTTPURLResponse *serverResponse = (NSHTTPURLResponse *)response;
+        
+        if (serverResponse.statusCode == 200) {
+            
+            // Covert the data into an UIImage object
+            UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageView.image = downloadedImage;
+            });
+        }
+    }];
+
+    [downloadImageTask resume];
 }
 
 @end

@@ -86,8 +86,6 @@
     
     viewController.mediaObject = [self.mediaController.mediaObjects objectAtIndex:indexPath.row];
     
-    viewController.view.backgroundColor = [UIColor blueColor];
-    
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
