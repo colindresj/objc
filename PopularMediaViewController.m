@@ -46,10 +46,12 @@
         
         if (success)
         {
+            // Reload the tableview
             NSLog(@"success!");
         }
         else
         {
+            // Alert the user on failure
             NSLog(@"failure");
         }
     }];

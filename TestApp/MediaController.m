@@ -7,6 +7,7 @@
 //
 
 #import "MediaController.h"
+#import "MediaObject.h"
 
 @implementation MediaController
 
@@ -43,7 +44,7 @@
             NSDictionary *hash = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
             
             if (!jsonError) {
-                NSLog(@"%@", hash);
+                self.mediaObjects = [self mediaObjectsFromResponse:hash];
                 completionBlock(YES);
             } else {
                 completionBlock(NO);
@@ -57,6 +58,26 @@
     
     // Call the NSURLSessionDataTask method that actually initiates the task
     [dataTask resume];
+}
+
+- (NSArray *)mediaObjectsFromResponse:(NSDictionary *)response
+{
+    // Initialize an empty NSMutableArray to hold the MediaObjects you create
+    NSMutableArray * mediaObjects = [NSMutableArray array];
+    
+    // Extract the array value that is keyed to the key "data" in the response dictionary
+    NSArray *popularData = [response valueForKey:@"data"];
+    
+    for (int i = 0; i < [popularData count]; i++) {
+        
+        // Convert each dictionary it contains into a MediaObject
+        MediaObject *mediaObject = [[MediaObject alloc] initWithDictionary:popularData[i]];
+        
+        // Push each new media object into the mediaObjects array
+        [mediaObjects addObject:mediaObject];
+    }
+    
+    return mediaObjects;
 }
 
 

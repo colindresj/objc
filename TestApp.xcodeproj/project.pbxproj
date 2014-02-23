@@ -22,6 +22,7 @@
 		4916C93A18B94E0C008D6E3E /* PopularMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4916C93818B94E0C008D6E3E /* PopularMediaViewController.m */; };
 		4916C93B18B94E0C008D6E3E /* PopularMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */; };
 		4916C93E18B95D3D008D6E3E /* MediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4916C93D18B95D3D008D6E3E /* MediaController.m */; };
+		49D65C0218BA758300C3AF4C /* MediaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D65C0118BA758300C3AF4C /* MediaObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopularMediaViewController.xib; path = ../PopularMediaViewController.xib; sourceTree = "<group>"; };
 		4916C93C18B95D3D008D6E3E /* MediaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaController.h; sourceTree = "<group>"; };
 		4916C93D18B95D3D008D6E3E /* MediaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaController.m; sourceTree = "<group>"; };
+		49D65C0018BA758300C3AF4C /* MediaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaObject.h; sourceTree = "<group>"; };
+		49D65C0118BA758300C3AF4C /* MediaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +122,11 @@
 				4916C91518B9483F008D6E3E /* AppDelegate.m */,
 				4916C93718B94E0C008D6E3E /* PopularMediaViewController.h */,
 				4916C93818B94E0C008D6E3E /* PopularMediaViewController.m */,
+				4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */,
 				4916C93C18B95D3D008D6E3E /* MediaController.h */,
 				4916C93D18B95D3D008D6E3E /* MediaController.m */,
-				4916C93918B94E0C008D6E3E /* PopularMediaViewController.xib */,
+				49D65C0018BA758300C3AF4C /* MediaObject.h */,
+				49D65C0118BA758300C3AF4C /* MediaObject.m */,
 				4916C91718B9483F008D6E3E /* Images.xcassets */,
 				4916C90C18B9483F008D6E3E /* Supporting Files */,
 			);
@@ -256,6 +261,7 @@
 				4916C93E18B95D3D008D6E3E /* MediaController.m in Sources */,
 				4916C91618B9483F008D6E3E /* AppDelegate.m in Sources */,
 				4916C91218B9483F008D6E3E /* main.m in Sources */,
+				49D65C0218BA758300C3AF4C /* MediaObject.m in Sources */,
 				4916C93A18B94E0C008D6E3E /* PopularMediaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +465,7 @@
 				4916C93018B9483F008D6E3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4916C93118B9483F008D6E3E /* Build configuration list for PBXNativeTarget "TestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +474,7 @@
 				4916C93318B9483F008D6E3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
