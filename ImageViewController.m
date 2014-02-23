@@ -47,6 +47,9 @@
 
 -(void)setupImageView
 {
+    [self.loader startAnimating];
+    self.loader.hidesWhenStopped = YES;
+    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDownloadTask *downloadImageTask = [session downloadTaskWithURL:self.mediaObject.imgURL completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         
@@ -57,6 +60,7 @@
             // Covert the data into an UIImage object
             UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.loader stopAnimating];
                 self.imageView.image = downloadedImage;
             });
         }

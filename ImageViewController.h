@@ -11,6 +11,7 @@
 
 @interface ImageViewController : UIViewController
 
-@property (nonatomic, strong) MediaObject *mediaObject;
+@property (nonatomic, strong) IBOutlet MediaObject *mediaObject;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *loader;
 
 @end
