@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopularMediaViewController">
             <connections>
+                <outlet property="loader" destination="xHi-GJ-OCz" id="54H-9z-K92"/>
                 <outlet property="tableView" destination="cQp-qs-lcp" id="xmy-O1-4FH"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -24,6 +25,10 @@
                         <outlet property="delegate" destination="-1" id="4uD-9F-aLZ"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xHi-GJ-OCz">
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

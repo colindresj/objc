@@ -10,4 +10,7 @@
 
 @interface PopularMediaViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *loader;
+@property (nonatomic, strong) IBOutlet UIRefreshControl *refreshControl;
+
 @end

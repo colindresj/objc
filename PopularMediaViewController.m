@@ -14,7 +14,6 @@
 @interface PopularMediaViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
-
 @property (nonatomic, strong) MediaController *mediaController;
 
 @end
@@ -36,7 +35,9 @@
     
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"WUDUP";
+    [[self.navigationController navigationBar] setTintColor: [UIColor blackColor]];
+    
+    self.title = @"JC's App";
     
     self.mediaController = [[MediaController alloc] init];
     [self updateContent];
@@ -48,6 +49,9 @@
 
 - (void)updateContent
 {
+    [self.loader startAnimating];
+    self.loader.hidesWhenStopped = YES;
+    
     // for memory management
     __weak PopularMediaViewController *weakSelf = self;
     
@@ -57,6 +61,8 @@
             
             if (success)
             {
+                [self.loader stopAnimating];
+                
                 // Reload the tableview
                 [self.tableView reloadData];
             }
@@ -104,7 +110,6 @@
     MediaObject *currMediaObject = [self.mediaController.mediaObjects objectAtIndex:indexPath.row];
     
     cell.textLabel.textColor = [UIColor grayColor];
-    cell.backgroundColor = [UIColor whiteColor];
     cell.textLabel.text = currMediaObject.username;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
